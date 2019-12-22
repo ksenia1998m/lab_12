@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <h2>Добавление пользователя</h2>
+        <div class="col-12">
+            <h6>Введите имя</h6>
+            <input type="text" class="form-control" placeholder="Имя" (keydown)="onValidate(inputFirstname, inputLastname, saveButton)" #inputFirstname>
+        </div>
+        <div class="col-12 mt-2">
+            <h6>Введите фамилию</h6>
+            <input type="text" class="form-control" placeholder="Фамилия" (keydown)="onValidate(inputFirstname, inputLastname, saveButton)" #inputLastname>
+        </div>
+        <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-success" (click)="onAddPerson(inputFirstname, inputLastname, saveButton)" disabled #saveButton>Сохранить</button>
+        </div>
+    </div>
+</div>
