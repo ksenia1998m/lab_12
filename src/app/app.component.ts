@@ -27,11 +27,19 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
   }
 
-  onAddPerson(person: Person) {
-    let newId = this.persons[this.persons.length - 1].id + 1;
-    person.id = newId;
-    this.persons.push(person);
-  }
+  
+
+  onAddPerson(person: Person) { 
+    if (this.persons.length > 0){ 
+    let newId = this.persons[this.persons.length - 1].id + 1; 
+    person.id = newId; 
+    this.persons.push(person); 
+    } 
+    else { 
+    person.id = 1; 
+    this.persons.push(person); 
+    } 
+    }
   
   onDeletePerson(inPerson) {
     this.persons.splice(this.persons.indexOf(inPerson), 1);
